@@ -32,7 +32,7 @@ app.post("/api/read-cv", async (req, res) => {
   });
 
   if (!response.ok) {
-    return res.status(502).json({ error: "The AI is unavailable, try again" });
+    return res.status(502).json({ error: "The AI couldn't answer, try again" });
   }
   const data = await response.json();
   res.json({ content: data.choices[0].message.content });
